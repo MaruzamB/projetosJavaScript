@@ -16,6 +16,12 @@ ajustaTamanhoTelaJogo()
 
 function posicaoRandomica(){
 
+     //remover mosquito anterior (caso exista)
+
+     if(document.getElementById('mosquito')){
+     document.getElementById('mosquito').remove();
+     }  
+
      var posicaoX = Math.floor(Math.random() * largura) - 90;
      var posicaoY = Math.floor(Math.random()* altura) - 90;
 
@@ -31,9 +37,9 @@ function posicaoRandomica(){
      mosca.style.left = posicaoX + 'px';
      mosca.style.top = posicaoY + 'px';
      mosca.style.position = 'absolute';
+     mosca.id = 'mosquito'
 
      document.body.appendChild(mosca);
-
      
 }
 
