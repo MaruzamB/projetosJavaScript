@@ -16,7 +16,7 @@
             <img id="v3" src="imagens/coracao_cheio.png" alt="">
         </div>
         <div class="cronometro">
-            Tenpo Restante: ?
+            Tenpo Restante: <span id="cronometro"></span> ?
         </div>
     </div>
 
@@ -24,7 +24,8 @@
 
 
     <script>
-        setInterval(function(){
+        document.getElementById('cronometro').innerHTML = tempo;
+        var criarMosca = setInterval(function(){
             posicaoRandomica()
         }, 2000)
         </script>      
