@@ -2,6 +2,7 @@
 
 var altura = 0
 var largura = 0
+var vidas = 1
 
 function ajustaTamanhoTelaJogo(){
      altura = window.innerHeight
@@ -19,8 +20,20 @@ function posicaoRandomica(){
      //remover mosquito anterior (caso exista)
 
      if(document.getElementById('mosquito')){
-     document.getElementById('mosquito').remove();
-     }  
+          document.getElementById('mosquito').remove();
+
+          //console.log('Elemento selecionado foi: v'+ vidas)
+          if(vidas > 3){
+               alert('game over')
+          }else{
+               document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"
+
+               vidas++
+          }
+          
+          }          
+
+      
 
      var posicaoX = Math.floor(Math.random() * largura) - 90;
      var posicaoY = Math.floor(Math.random()* altura) - 90;
@@ -38,6 +51,9 @@ function posicaoRandomica(){
      mosca.style.top = posicaoY + 'px';
      mosca.style.position = 'absolute';
      mosca.id = 'mosquito'
+     mosca.onclick = function(){
+          this.remove()
+     }
 
      document.body.appendChild(mosca);
      
