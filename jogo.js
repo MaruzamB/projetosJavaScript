@@ -24,11 +24,11 @@ function posicaoRandomica(){
 
           //console.log('Elemento selecionado foi: v'+ vidas)
           if(vidas > 3){
-               alert('game over')
+             window.location.href = 'gameOver.html';
           }else{
-               document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"
+               document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png";
 
-               vidas++
+               vidas++;
           }
           
           }          
